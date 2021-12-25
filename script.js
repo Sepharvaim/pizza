@@ -264,7 +264,7 @@ function calcoloIngredienti() {
   divLievito.innerHTML = `Grammi di lievito" ${(lievito * 1000).toFixed(2)}`;;
   divSale.innerHTML = `Grammi di sale" ${(sale * 1000).toFixed(2)}`;;
   divAcqua.innerHTML = `Kg di acqua" ${acqua.toFixed(4)}`;;
-  divFarina.innerHTML = `kg di farina" ${farina.toFixed(4)}`;;
+  divFarina.innerHTML = `kg di farina" ${kgFarina.toFixed(4)}`;;
   
   
 }
