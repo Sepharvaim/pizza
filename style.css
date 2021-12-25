@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+html {
+  /* overflow: hidden; */
+}
+body { 
+  background-color: #edf0f1;
+  position: relative;
+}
+.data {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.container {
+  width: 375px;
+  margin: 0 auto;
+  margin-top: 1px;
+  /* background-image: url(board.jpg); */
+  background-position: center;
+  padding: 5px 0 0 0;
+  border-radius: 0px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+
+/* la parte visibile dell'app  */
+body .container .seeing { 
+  flex-grow: 11;
+  overflow: auto;
+  padding-bottom: 60px;
+}
+
+/* la parte invisibile dell'app ovvero le liste che vengono aggiunte insieme ai tasti  */
+.adding {
+  width: 375px;
+  background: rgb(3, 135, 156);
+  color: #fff;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 6px 5px 10px 5px;
+  position: fixed;  
+  bottom: 0px;
+  z-index: 5;
+}
+
+/* Il campo di inserimento cose da fare */
+.inputField {
+  background: rgba(255,255,255,0.5);
+  width: 100%;
+  color: #fff;
+  font-size: 22px;
+  height: 50px;
+  padding: 0 60px 0 0;
+  border-radius: 15px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  text-indent: 25px;
+  outline: none;
+}
+/* bottone di aggiunta */
+.buttonAdd {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 5px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.4);
+  outline: none;
+}
+
+/* STYLING DEGLI  SVG -------------------------  */
+
+ul.listOfTasks button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.buttonAdd svg {
+  fill: #fff;
+  width: 16px;
+  height: 16px;
+}
+
+ul.listOfTasks li button.complete svg {
+  
+  fill: rgb(69, 199, 97);
+  border: 1px solid #138d4a;
+  border-radius: 25px;
+}
+.noFill {
+  fill: none;
+}
+/* hover complete to green il vsg e' composto da piu classi quindi va diviso ogni classe colora un pezzo del disegno */
+ul.listOfTasks li button.complete:hover svg .noFill {
+  fill: rgb(69, 199, 97);
+}
+ul.listOfTasks li button.complete:hover svg {
+  fill: rgb(167, 129, 129); 
+}
+button.remove:hover svg {
+  fill: red;
+}
+/* FINE STYLING DEGLI SVG -------------------- */
+
+
+
+ul.listOfTasks li {
+  display: flex;  
+  margin: 10px;
+  list-style-type: none;
+  background: rgba(255, 255, 255, 1);
+  padding: 16px 10px 14px 10px;
+  line-height: 16px;
+  flex-direction: row;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px rgba(44,62,80,0.10);
+  
+}
+
+ul.listOfTasks li p {
+  flex: 5 1;
+  font-size: 18px;
+}
+
+/* bottone contentente secchio */
+ul.listOfTasks li .remove {
+  background: none;
+  flex: 1 1;
+  outline: none;
+}
+
+/* bottone contenente il cerchio  */
+ul.listOfTasks li .complete {
+  border-left: 1px solid rgb(170, 199, 170);
+  background: none;
+  flex: 1 1;
+  outline: none;
+}
+/* frase che va via una volta aggiunto un elemento  */
+ul#todo:empty:after {
+  content: "Non hai ancora nulla sulla lista";
+  font-size: 20px;
+  width: 100%;
+  display: block;
+  text-align: center; 
+  color: rgb(168, 168, 168);
+  margin: 25px 0 25px 0;
+}
+
+#completed:before {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 2px;
+  background: #a4b3ad;
+  margin: 0 auto;
+  z-index: 4;
+}
+
+#completed:empty:after {
+  content: 'Ancora nessun compito svolto!';
+  text-align: center;
+  display: block;
+  margin: 20px 0 25px 0;
+  color: rgb(168, 168, 168);
+
+}
+
+.acqua,
+.farina,
+.sale,
+.lievito,
+.olio {
+  width: 250px;
+  height: 55px;
+}
